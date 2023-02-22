@@ -6,7 +6,7 @@
 class Game
 {
 public:
-	void playGame();
-	void playerVsPlayer();
-	void playerVsComputer();
+	void PlayGame();
+	void PlayerVsPlayer();
+	void PlayerVsComputer();
 };

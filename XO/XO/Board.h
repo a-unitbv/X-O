@@ -11,11 +11,11 @@ private:
 	int validMovesCount = 0;
 public:
 	Board();
-	void displayBoard();
-	void displayBoardInit();
-	void markBoard(char position, char playerSymbol);
-	bool isValidPosition(char position);
-	bool isAlreadyMarked(char position);
-	bool isWinner();
-	int getValidMovesCount();
+	void DisplayBoard();
+	void DisplayBoardInit();
+	void MarkBoard(char position, char playerSymbol);
+	bool IsValidPosition(char position);
+	bool IsAlreadyMarked(char position);
+	bool IsWinner();
+	int GetValidMovesCount();
 };

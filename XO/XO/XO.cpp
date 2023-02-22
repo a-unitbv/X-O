@@ -3,6 +3,6 @@
 int main()
 {
 	Game XO;
-	XO.playGame();
+	XO.PlayGame();
 	return 0;
 }

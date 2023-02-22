@@ -13,7 +13,7 @@ Board::Board()
 	board[2][2] = '9';
 }
 
-void Board::displayBoard()
+void Board::DisplayBoard()
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -28,7 +28,7 @@ void Board::displayBoard()
 	}
 }
 
-void Board::displayBoardInit()
+void Board::DisplayBoardInit()
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -40,7 +40,7 @@ void Board::displayBoardInit()
 	}
 }
 
-void Board::markBoard(char position, char playerSymbol)
+void Board::MarkBoard(char position, char playerSymbol)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -55,7 +55,7 @@ void Board::markBoard(char position, char playerSymbol)
 	}
 }
 
-bool Board::isValidPosition(char position)
+bool Board::IsValidPosition(char position)
 {
 	if (position >= '1' && position <= '9')
 		return true;
@@ -63,7 +63,7 @@ bool Board::isValidPosition(char position)
 		return false;
 }
 
-bool Board::isAlreadyMarked(char position)
+bool Board::IsAlreadyMarked(char position)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -76,7 +76,7 @@ bool Board::isAlreadyMarked(char position)
 	return false;
 }
 
-bool Board::isWinner()
+bool Board::IsWinner()
 {
 	if (board[0][0] == board[0][1] && board[0][1] == board[0][2])
 		return true;
@@ -98,7 +98,7 @@ bool Board::isWinner()
 		return false;
 }
 
-int Board::getValidMovesCount()
+int Board::GetValidMovesCount()
 {
 	return validMovesCount;
 }

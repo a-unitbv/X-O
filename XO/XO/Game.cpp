@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "Board.h"
 
-void Game::playerVsPlayer()
+void Game::PlayerVsPlayer()
 {
 	Board board;
 	char player1, player2, playerSymbol;
@@ -11,7 +11,7 @@ void Game::playerVsPlayer()
 	srand(time(NULL));
 
 	std::cout << "+-------------+" << std::endl;
-	board.displayBoardInit();
+	board.DisplayBoardInit();
 	std::cout << "+-------------+" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Enter symbol for player 1: ";
@@ -29,10 +29,10 @@ void Game::playerVsPlayer()
 		std::cout << "Player 2 is starting.";
 	std::cout << std::endl;
 
-	while (board.getValidMovesCount() < 9)
+	while (board.GetValidMovesCount() < 9)
 	{
 		std::cout << std::endl;
-		if (board.getValidMovesCount() % 2 == coin)
+		if (board.GetValidMovesCount() % 2 == coin)
 		{
 			playerTurn = firstPlayer;
 			playerSymbol = player1;
@@ -55,16 +55,16 @@ void Game::playerVsPlayer()
 		else
 		{
 			char pos = position + 49;
-			if (!board.isValidPosition(pos))
+			if (!board.IsValidPosition(pos))
 			{
 				std::cout << "Invalid position! Please try another." << std::endl;
 			}
 			else
 			{
-				if (board.isAlreadyMarked(pos))
+				if (board.IsAlreadyMarked(pos))
 				{
-					board.markBoard(pos, playerSymbol);
-					board.displayBoard();
+					board.MarkBoard(pos, playerSymbol);
+					board.DisplayBoard();
 				}
 				else
 				{
@@ -72,13 +72,13 @@ void Game::playerVsPlayer()
 				}
 			}
 		}
-		if (board.isWinner())
+		if (board.IsWinner())
 		{
 			
 			std::cout << std::endl << "Player " << playerTurn << " wins!" << std::endl;
 			break;
 		}
-		if (board.getValidMovesCount() == 9)
+		if (board.GetValidMovesCount() == 9)
 		{
 			std::cout << std::endl << "Draw!" << std::endl;
 			break;
@@ -86,7 +86,7 @@ void Game::playerVsPlayer()
 	}
 }
 
-void Game::playerVsComputer()
+void Game::PlayerVsComputer()
 {
 	Board board;
 	char player, computer, playerSymbol;
@@ -95,7 +95,7 @@ void Game::playerVsComputer()
 	srand(time(NULL));
 
 	std::cout << "+-------------+" << std::endl;
-	board.displayBoardInit();
+	board.DisplayBoardInit();
 	std::cout << "+-------------+" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Enter symbol for player: ";
@@ -113,10 +113,10 @@ void Game::playerVsComputer()
 		std::cout << "Computer is starting.";
 	std::cout << std::endl;
 
-	while (board.getValidMovesCount() < 9)
+	while (board.GetValidMovesCount() < 9)
 	{
 		std::cout << std::endl;
-		if (board.getValidMovesCount() % 2 == coin)
+		if (board.GetValidMovesCount() % 2 == coin)
 		{
 			playerSymbol = player;
 			std::cout << "Your turn. ";
@@ -132,16 +132,16 @@ void Game::playerVsComputer()
 			{
 				char pos = position + 49;
 
-				if (!board.isValidPosition(pos))
+				if (!board.IsValidPosition(pos))
 				{
 					std::cout << "Invalid position! Please try another." << std::endl;
 				}
 				else
 				{
-					if (board.isAlreadyMarked(pos))
+					if (board.IsAlreadyMarked(pos))
 					{
-						board.markBoard(pos, playerSymbol);
-						board.displayBoard();
+						board.MarkBoard(pos, playerSymbol);
+						board.DisplayBoard();
 					}
 					else
 					{
@@ -149,13 +149,13 @@ void Game::playerVsComputer()
 					}
 				}
 			}
-			if (board.isWinner())
+			if (board.IsWinner())
 			{
 
 				std::cout << std::endl << "You win!" << std::endl;
 				break;
 			}
-			if (board.getValidMovesCount() == 9)
+			if (board.GetValidMovesCount() == 9)
 			{
 				std::cout << std::endl << "Draw!" << std::endl;
 				break;
@@ -175,18 +175,18 @@ void Game::playerVsComputer()
 			else
 			{
 				char pos = position + 49;
-				board.isValidPosition(pos);
+				board.IsValidPosition(pos);
 
-				if (!board.isValidPosition(pos))
+				if (!board.IsValidPosition(pos))
 				{
 					std::cout << "Invalid position! Please try another." << std::endl;
 				}
 				else
 				{
-					if (board.isAlreadyMarked(pos))
+					if (board.IsAlreadyMarked(pos))
 					{
-						board.markBoard(pos, playerSymbol);
-						board.displayBoard();
+						board.MarkBoard(pos, playerSymbol);
+						board.DisplayBoard();
 					}
 					else
 					{
@@ -194,13 +194,13 @@ void Game::playerVsComputer()
 					}
 				}
 			}
-			if (board.isWinner())
+			if (board.IsWinner())
 			{
 
 				std::cout << std::endl << "Computer wins!" << std::endl;
 				break;
 			}
-			if (board.getValidMovesCount() == 9)
+			if (board.GetValidMovesCount() == 9)
 			{
 				std::cout << std::endl << "Draw!" << std::endl;
 				break;
@@ -209,7 +209,7 @@ void Game::playerVsComputer()
 	}
 }
 
-void Game::playGame()
+void Game::PlayGame()
 {
 	std::cout << "Press 'a' to play the game, in console, player vs. player." << std::endl;
 	std::cout << "Press 'b' to play the game, in console, player vs. computer." << std::endl;
@@ -228,7 +228,7 @@ void Game::playGame()
 			{
 			case 'a':
 			{
-				playerVsPlayer();
+				PlayerVsPlayer();
 				std::cout << "Would you like to play again or perhabs try another mode? (Y / N)" << std::endl;
 				char answer;
 				std::cout << std::endl;
@@ -249,7 +249,7 @@ void Game::playGame()
 			}
 			case 'b':
 			{
-				playerVsComputer();
+				PlayerVsComputer();
 				std::cout << "Would you like to play again or perhabs try another mode? (Y / N)" << std::endl;
 				char answer;
 				std::cout << std::endl;
