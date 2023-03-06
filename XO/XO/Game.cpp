@@ -98,7 +98,7 @@ void Game::PlayerVsComputer()
 	board.DisplayBoardInit();
 	std::cout << "+-------------+" << std::endl;
 	std::cout << std::endl;
-	std::cout << "Enter symbol for player: ";
+	std::cout << "Enter symbol for yourself: ";
 	std::cin >> player;
 	std::cout << "Enter symbol for computer: ";
 	std::cin >> computer;
@@ -108,7 +108,7 @@ void Game::PlayerVsComputer()
 	int coin = (rand() % 2 + 1);
 	coin--;
 	if (coin == 0)
-		std::cout << "Player is starting.";
+		std::cout << "You are starting.";
 	else
 		std::cout << "Computer is starting.";
 	std::cout << std::endl;
@@ -213,9 +213,7 @@ void Game::PlayGame()
 {
 	std::cout << "Press 'a' to play the game, in console, player vs. player." << std::endl;
 	std::cout << "Press 'b' to play the game, in console, player vs. computer." << std::endl;
-	std::cout << "Press 'c' to play the game, in GUI, player vs. player." << std::endl;
-	std::cout << "Press 'd' to play the game, in GUI, player vs. computer." << std::endl;
-	std::cout << "Press 'e' to exit." << std::endl;
+	std::cout << "Press 'c' to exit." << std::endl;
 
 	std::string option;
 	bool menu = true;
@@ -238,8 +236,6 @@ void Game::PlayGame()
 					system("cls");
 					std::cout << "Press 'a' to play the game, in console, player vs. player." << std::endl;
 					std::cout << "Press 'b' to play the game, in console, player vs. computer." << std::endl;
-					std::cout << "Press 'c' to play the game, in GUI, player vs. player." << std::endl;
-					std::cout << "Press 'd' to play the game, in GUI, player vs. computer." << std::endl;
 				}
 				else
 				{
@@ -259,8 +255,6 @@ void Game::PlayGame()
 					system("cls");
 					std::cout << "Press 'a' to play the game, in console, player vs. player." << std::endl;
 					std::cout << "Press 'b' to play the game, in console, player vs. computer." << std::endl;
-					std::cout << "Press 'c' to play the game, in GUI, player vs. player." << std::endl;
-					std::cout << "Press 'd' to play the game, in GUI, player vs. computer." << std::endl;
 				}
 				else
 				{
@@ -270,20 +264,12 @@ void Game::PlayGame()
 			}
 			case 'c':
 			{
-				break;
-			}
-			case 'd':
-			{
-				break;
-			}
-			case 'e':
-			{
 				menu = false;
 				break;
 			}
 			default:
 			{
-				if (option[0] < 'a' || option[0] > 'e')
+				if (option[0] < 'a' || option[0] > 'c')
 				{
 					std::cout << "Not an option, try again:" << std::endl;
 					std::cout << std::endl;
